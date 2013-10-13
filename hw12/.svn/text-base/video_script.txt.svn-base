@@ -1,0 +1,20 @@
+There are two main ways data are stored on a computer. Space your computer uses to read and write data accessed by the CPU is stored on the RAM (Random Access Memory). However, the place where the CPU ultimately reads or writes data to its final place - the main recepitcal for all data (pictures, programs, files, etc) - is the hard drive.
+
+The basic components that all hard drives share are: the platter, the spindle, the r/w head, the head arm and the pivot. 
+
+The platter is the disk where magnetized data is stored. Most drives have at least two platter, with each side magnetized so such a drive has 4 sides to store data.  All of the platters are mounted on one spindle that rotates at a certain speed.
+
+The spindle is a rotation rod that the platter is clamped to.
+
+There's one head per surface, that reads and writes data.  They can move closer and farther from the spindle to read different tracks.  Each track is one circle around a surface.
+The head arm and the pivot support the head to let it access different tracts.
+
+A cylinder is all of the tracks that the head can access at each position.  If you want to access other data, you can either have the head move, called a seek, or you can switch heads, called a head switch.  They both take around the same amount of time.
+
+When the head has to move farther, it takes longer, but the distance to time correlation isn't linear. What characterizes the speed gap is how long the head has to wait until the drive rotates to the correct position for the data to be read or written. This is called rotational latency. Therefore, it's a lot more efficient for all of the data you want to access to be adjacent on the platter.
+
+It's better for speed if the drive waits until there are multiple things it needs to do, then does them all at once, so when writing programs, you shouldn't wait for the drive to do something before giving it more things to do.  It can automatically organize all the requests so it can be the most efficient.
+
+As with any technology, hard drives are becoming replaced with something more efficient. Solid state memory (also known as flash memory) has been around since 2000. It was initially used in USB drives and is now common in audio players, digital cameras, mobile phones, and synthesizers. It has recently been utilized in personal computers (MacBook Air). Flash memory is a memory chip that can be electronically erased and reprogrammed and is therefore much faster than the mechnical hard drive. It is also less susceptible from damages from movement, because there are no moving parts. However, there are drawbacks. Flash memory only has a limited number of erases (while a hard drive has unlimited). Most commercially available flash products are guaranteed to withstand around 100,000 P/E (program erase) cycles. Also, although it can read a byte or a word at a time in a random access fashion, it can only be erased or programmed a "block" at a time.
+
+In order to get the best of both worlds, some computers impliment a semi-solid state drive. These memory units have both a hard drive and a solid state memory component. Recent or running applications or stored in the solid state memory while programs that haven't been used in a while are stored on the traditional harddrive. According the companies that provide these, the solid state is large enough to get solid state drive -like performance without the expensive pricetag. 

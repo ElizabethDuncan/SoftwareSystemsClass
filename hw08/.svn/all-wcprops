@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/repo/courses/fa12/engr3525/!svn/ver/726/eduncan/hw08
+END
+file2.txt
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repo/courses/fa12/engr3525/!svn/ver/726/eduncan/hw08/file2.txt
+END
+tee_compiled
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repo/courses/fa12/engr3525/!svn/ver/726/eduncan/hw08/tee_compiled
+END
+file1.txt
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repo/courses/fa12/engr3525/!svn/ver/726/eduncan/hw08/file1.txt
+END
+tee.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/repo/courses/fa12/engr3525/!svn/ver/726/eduncan/hw08/tee.c
+END

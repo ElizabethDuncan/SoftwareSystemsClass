@@ -1,0 +1,72 @@
+/* Elizabeth Duncan
+   Homework 13
+   Software Systems
+*/
+
+
+#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <errno.h>
+#include <sys/types.h>
+#include <sys/wait.h> 
+
+void forkeverything(int argc, char* argv[]){
+
+    int fd[2];
+    int pidstatus;
+    char input_buffer[1000];
+    
+    if(pipe(fd) == -1){
+        fprintf(stderr, "Can't create the pipe");
+    }
+    
+    int pid = fork();
+    //error check fork (from HeadFirst)
+    if (pid == -1) {
+        fprintf(stderr, "Can't for process: %s\n", strerror(errno));
+        exit(1);
+        }
+    //If pid !=0 then it's the parent
+    if(!pid){  
+        if(argc == 0) {
+            while(fgets(input_buffer, 1000,stdin)){;
+                printf("%s", input_buffer);
+            }
+        }          
+        if(argc > 0){
+        
+        char *array_of_strings[3];
+        array_of_strings[0] = "grep";
+        array_of_strings[1] = argv[0];
+        array_of_strings[2] = NULL;
+        //printf("Running grep with %s \n", argv[0]);
+        close(fd[0]);
+        dup2(fd[1],1);
+        //close(fd[1]);
+        execvp("grep", array_of_strings); 
+        }       
+               
+    }else{
+    
+        if(argc > 0){
+   
+            if(waitpid(pid, &pidstatus, 0) == -1){
+                printf("Waiting for child\n");
+                exit(1);
+            }
+         //printf("argc is %i\n", argc);
+        //parent must just wait
+        dup2(fd[0],0);
+        //close(fd[0]);
+        close(fd[1]);
+        forkeverything(argc-1,argv+1);
+        }  
+    }
+}
+
+int main(int argc, char *argv[]){
+    forkeverything(argc-1, argv+1);
+    return 0;
+}

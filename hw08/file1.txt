@@ -1,0 +1,9 @@
+file1.txt
+tee.c
+tee.c~
+tee_compiled
+file1.txt
+file2.txt
+tee.c
+tee.c~
+tee_compiled
